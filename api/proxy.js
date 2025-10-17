@@ -1,9 +1,10 @@
 // File: api/proxy.js
 export default async function handler(req, res) {
-  // This is the corrected line with YOUR actual GitHub Pages URL.
-  res.setHeader('Access-Control-Allow-Origin', 'https://masskarem1.github.io');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+headers: {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+};
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
